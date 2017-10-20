@@ -41,6 +41,33 @@ public class mainHunt {
 			}
 			if(command.equalsIgnoreCase("Move"))
 			{
+				if(move.equals("N")){
+					if(x == 0)
+						b = true;
+					else
+						x--;
+				}
+					
+				if(move.equals("S")){
+					if(x == n-1)
+						b = true;
+					else
+						x++;
+				}
+					
+				if(move.equals("E")){
+					if(y == n-1)
+						b = true;
+					else
+						y++;
+				}
+					
+				if(move.equals("W")){
+					if(y == 0)
+						b = true;
+					else
+						y--;
+				}
 				
 			}
 		}
