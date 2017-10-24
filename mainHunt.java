@@ -12,7 +12,19 @@ public class mainHunt {
 	{
 		Scanner fin=new Scanner(new FileReader("rooms.txt"));
 		int n=fin.nextInt();
-			int [] a=new int[n];
+			rooms [] a=new rooms[n];
+			
+			for(int i=0;i<n;i++)
+			{
+				a[i] = new rooms(i+1);
+			}
+			for(int i=0;i<n;i++)
+			{
+				String[] b=fin.nextLine().split(" ");
+			}
+			
+			
+			
 				fin.close();
 				
 		System.out.println("Welcome to Hunt the Wumpus!");
@@ -31,8 +43,10 @@ public class mainHunt {
 			
 			if(command.equalsIgnoreCase("Shoot"))
 			{
+				System.out.println("Which room?");
 				arrow=arrow-1;
 				System.out.println("You now have " + arrow + " arrow(s) left");
+				
 				if(arrow==0)
 				{
 					System.out.println("You have no more arrows left. Game over!");
@@ -41,34 +55,12 @@ public class mainHunt {
 			}
 			if(command.equalsIgnoreCase("Move"))
 			{
-				if(move.equals("N")){
-					if(x == 0)
-						b = true;
-					else
-						x--;
-				}
-					
-				if(move.equals("S")){
-					if(x == n-1)
-						b = true;
-					else
-						x++;
-				}
-					
-				if(move.equals("E")){
-					if(y == n-1)
-						b = true;
-					else
-						y++;
-				}
-					
-				if(move.equals("W")){
-					if(y == 0)
-						b = true;
-					else
-						y--;
-				}
-				
+				System.out.println("To which room?");
+			}
+			if(command.equalsIgnoreCase("Quit"))
+			{
+				System.out.println("Goodbye!");
+				break;
 			}
 		}
 		cin.close();
